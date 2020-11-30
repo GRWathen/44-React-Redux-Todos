@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React from "react";
+import { useSelector } from "react-redux";
+
 import './App.css';
 
+import TodoForm from "./TodoForm.js";
+import Todo from "./Todo.js";
+
 function App() {
+  const todos = useSelector(store => store);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        React &#47; Redux Todos
       </header>
+      <TodoForm />
+      <section id="todoContainer">
+        {
+          todos.map(function (todo) {
+            return (<Todo key={todo.key} id={todo.key} text={todo.text} complete={todo.complete} />);
+          })
+        }
+      </section>
     </div>
   );
 }

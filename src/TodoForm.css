@@ -1,0 +1,12 @@
+#TodoForm {
+    margin: 1em;
+    margin-bottom: 3em;
+}
+
+#TodoForm label {
+    margin: 5px;
+}
+
+#TodoForm button {
+    margin: 5px;
+}

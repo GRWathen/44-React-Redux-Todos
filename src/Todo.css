@@ -1,0 +1,7 @@
+.Todo {
+    margin: 2px;
+}
+
+.Todo-Complete {
+    text-decoration: line-through;
+}
